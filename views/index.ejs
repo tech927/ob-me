@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INCONNU OBFUSCATOR WEB</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header class="glow">
+      <img src="/images/logo.png" alt="INCONNU OBFUSCATOR WEB" class="logo">
+      <h1>INCONNU OBFUSCATOR WEB</h1>
+      <p class="tagline">Futuristic JavaScript Protection</p>
+    </header>
+
+    <main>
+      <section class="obfuscator-section">
+        <h2 class="section-title neon-blue">JavaScript Obfuscator</h2>
+        <div class="upload-box">
+          <form id="obfuscateForm" enctype="multipart/form-data">
+            <div class="file-upload">
+              <input type="file" id="jsFile" name="jsFile" accept=".js" required>
+              <label for="jsFile" class="glow-button">Choose JS File</label>
+              <span id="fileName">No file chosen</span>
+            </div>
+            
+            <div class="method-selector">
+              <label for="method">Obfuscation Method:</label>
+              <select id="method" name="method" class="glow-select">
+                <option value="base64">Base64 Encoding</option>
+                <option value="reverse">String Reversal</option>
+                <option value="hex">Hex Encoding</option>
+                <option value="binary">Binary Encoding</option>
+                <option value="rot13">ROT13 Cipher</option>
+                <option value="charCode">Char Code Conversion</option>
+                <option value="unicode">Unicode Escape</option>
+                <option value="custom1">Custom XOR Obfuscation</option>
+                <option value="custom2">Custom Shift Obfuscation</option>
+                <option value="custom3">Positional XOR Obfuscation</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="glow-button">Obfuscate & Download</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="comments-section">
+        <h2 class="section-title neon-purple">Developer Community</h2>
+        <div class="comment-form">
+          <h3>Leave a Comment</h3>
+          <form id="commentForm">
+            <div class="form-group">
+              <input type="text" id="devName" placeholder="Dev Name" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="contact" placeholder="Email or Phone" required>
+            </div>
+            <div class="form-group">
+              <textarea id="message" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="glow-button">Post Comment</button>
+          </form>
+        </div>
+        
+        <div class="comments-feed">
+          <h3>Live Comments Feed</h3>
+          <div id="commentsContainer">
+            <% comments.forEach(comment => { %>
+              <div class="comment">
+                <div class="comment-header">
+                  <span class="dev-name"><%= comment.devName %></span>
+                  <span class="contact"><%= comment.contact %></span>
+                  <span class="timestamp"><%= new Date(comment.timestamp).toLocaleString() %></span>
+                </div>
+                <div class="comment-body"><%= comment.message %></div>
+              </div>
+            <% }); %>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="glow">
+      <p>© 2023 INCONNU OBFUSCATOR WEB | Futuristic Code Protection</p>
+    </footer>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
